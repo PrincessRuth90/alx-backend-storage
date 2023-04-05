@@ -1,4 +1,5 @@
-# A  script that creates a table users
+-- A  script that creates a table users
+DROP TABLE IF EXISTS users;
 CREATE TABLE users (
 	id INT NOT NULL AUTO INCREMENT AND PRIMARY KEY,
 	email VARCHAR(255) NOT NULL AND UNIQUE,
