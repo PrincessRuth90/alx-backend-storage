@@ -1,4 +1,4 @@
 -- A script that creates a trigger that decreases the quantity of an item after adding a new order
-CREATE TRIGGER DECREMENT
-AFTER INSERT ON ORDERS FOR EACH ROW
-UPDATE ITEMS SET QUANTITY = QUANTITY - NEW.NUMBER WHERE NAME = NEW.ITEM_NAME;
+CREATE TRIGGER decrement
+AFTER INSERT ON orders FOR EACH ROW
+UPDATE items SET quantity = quantity - NEW.number WHERE NAME = NEW.item_name;
