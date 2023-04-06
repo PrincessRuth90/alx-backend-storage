@@ -1,8 +1,7 @@
--- Creates a stored procedure, ComputeOverallScoreForUser that computes stores
--- stores the overall score for a student
-
+-- a script that creates a stored procedure ComputeAverageWeightedScoreForUser
+-- that computes and store the average weighted score for a student.
 DELIMITER //
-CREATE PROCEDURE ComputeOverallScoreForUser(
+CREATE PROCEDURE ComputeAverageScoreForUser(
 	IN user_id int
 )
 BEGIN
@@ -13,4 +12,4 @@ BEGIN
 	GROUP BY corrections.user_id )
     WHERE id=user_id;
 END //
-DELIMITER ;
+DELIMITER;
