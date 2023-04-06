@@ -1,8 +1,9 @@
 -- A script that creates a stored procedure ComputeAverageScoreForUser
--- that computes and store the average score for a student.
+-- that computes and store the average score
+
 DELIMITER //
 CREATE PROCEDURE ComputeOverallScoreForUser(
-        IN user_id int
+	IN user_id int
 )
 BEGIN
    UPDATE users
