@@ -7,17 +7,13 @@ from typing import Callable
 
 
 redis_store = redis.Redis()
-"""Redis func
-"""
 
 
 def data_cacher(method: Callable) -> Callable:
-    """Caches function
-    """
+    """Caches the output"""
     @wraps(method)
     def invoker(url) -> str:
-        """ wrapper function
-        """
+        """The wrapper function"""
         redis_store.incr(f'count:{url}')
         result = redis_store.get(f'result:{url}')
         if result:
@@ -31,6 +27,5 @@ def data_cacher(method: Callable) -> Callable:
 
 @data_cacher
 def get_page(url: str) -> str:
-    """Returns the content of a URL
-    """
+    """"Returns the content of the URL"""
     return requests.get(url).text
